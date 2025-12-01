@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GibberishStudio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">GibberishStudio</a>
+    <nav class="nav">
+      <a href="games.html">Игры</a>
+      <a href="team.html">Команда</a>
+      <a href="blog.html">Блог</a>
+      <a href="contact.html" class="cta">Контакты</a>
+    </nav>
+    <button class="theme-toggle" title="Переключить тему">🌙</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Создаём игры, которые остаются с вами</h1>
+      <p class="lead">Независимая студия: инди-проекты и кооперации AAA. Дизайн, код, арт — всё в одном месте.</p>
+      <div class="hero-actions">
+        <a class="btn" href="games.html">Портфолио</a>
+        <a class="btn ghost" href="contact.html">Связаться</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="screenshot"></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats container">
+  <div class="stat-card">
+    <h3>Пользователей онлайн</h3>
+    <p id="active-users" class="big">0</p>
+    <p class="muted">Реальное время (демо)</p>
+  </div>
+  <div class="stat-card">
+    <h3>Текущий проект</h3>
+    <p class="big">Project Nova</p>
+    <p class="muted">Ранний доступ — в разработке</p>
+  </div>
+  <div class="stat-card">
+    <h3>Последние релизы</h3>
+    <p class="big">2</p>
+    <p class="muted">В этом году</p>
+  </div>
+</section>
+
+<section class="container cards">
+  <article class="card">
+    <h2>Наши игры</h2>
+    <p>Описание серии проектов, жанровая направленность и ссылки на страницы игр.</p>
+    <a class="link" href="games.html">Смотреть игры →</a>
+  </article>
+  <article class="card">
+    <h2>О студии</h2>
+    <p>История, миссия, технологический стек, партнёры.</p>
+    <a class="link" href="team.html">Узнать больше →</a>
+  </article>
+  <article class="card">
+    <h2>Вакансии и стажировки</h2>
+    <p>Ищем программистов, художников и дизайнеров уровней.</p>
+    <a class="link" href="team.html">Присоединиться →</a>
+  </article>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="brand"><a href="index.html">GibberishStudio</a></div>
+    <div class="footer-links">
+      <a href="sitemap.xml">Карта сайта</a>
+      <a href="robots.txt">robots.txt</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<div class="analytics-pinned">GA_ID / YM_ID</div>
+
+<script>
+const toggleBtn = document.querySelector(".theme-toggle");
+function updateToggleIcon(){ toggleBtn.textContent = document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"; }
+const savedTheme = localStorage.getItem('theme');
+if(savedTheme){ document.documentElement.setAttribute('data-theme',savedTheme); }
+updateToggleIcon();
+toggleBtn.addEventListener("click",()=>{
+  const html=document.documentElement;
+  const newTheme = html.getAttribute("data-theme")==="dark"?"light":"dark";
+  html.setAttribute("data-theme",newTheme);
+  localStorage.setItem('theme',newTheme);
+  updateToggleIcon();
+});
+
+// demo online users
+let count = Math.floor(Math.random()*10);
+const el = document.getElementById('active-users'); el.textContent = count;
+setInterval(()=>{
+  const delta = Math.random()>0.5?1:-1;
+  count = Math.max(0,count + delta*Math.round(Math.random()*2));
+  el.textContent = count;
+},5000);
+</script>
+</body>
+</html>

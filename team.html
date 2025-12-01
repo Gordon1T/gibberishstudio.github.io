@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Команда — GibberishStudio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">GibberishStudio</a>
+    <nav class="nav">
+      <a href="games.html">Игры</a>
+      <a href="team.html">Команда</a>
+      <a href="blog.html">Блог</a>
+      <a href="contact.html" class="cta">Контакты</a>
+    </nav>
+    <button class="theme-toggle" title="Переключить тему">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Наша команда</h1>
+  <p class="lead">Ключевые участники проекта.</p>
+  <section class="team-grid">
+    <article class="team-card">
+      <div class="avatar">I</div>
+      <h3>Иван Иванов</h3>
+      <p class="muted">Lead Developer</p>
+    </article>
+    <article class="team-card">
+      <div class="avatar">M</div>
+      <h3>Мария Петрова</h3>
+      <p class="muted">Lead Artist</p>
+    </article>
+    <article class="team-card">
+      <div class="avatar">A</div>
+      <h3>Алексей Смирнов</h3>
+      <p class="muted">Game Designer</p>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="brand"><a href="index.html">GibberishStudio</a></div>
+    <div class="footer-links">
+      <a href="sitemap.xml">Карта сайта</a>
+      <a href="robots.txt">robots.txt</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggleBtn = document.querySelector(".theme-toggle");
+function updateToggleIcon(){ toggleBtn.textContent = document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"; }
+const savedTheme = localStorage.getItem('theme');
+if(savedTheme){ document.documentElement.setAttribute('data-theme',savedTheme); }
+updateToggleIcon();
+toggleBtn.addEventListener("click",()=>{
+  const html=document.documentElement;
+  const newTheme = html.getAttribute("data-theme")==="dark"?"light":"dark";
+  html.setAttribute("data-theme",newTheme);
+  localStorage.setItem('theme',newTheme);
+  updateToggleIcon();
+});
+</script>
+</body>
+</html>
