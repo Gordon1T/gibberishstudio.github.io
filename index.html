@@ -40,7 +40,7 @@
 <section class="stats container">
   <div class="stat-card">
     <h3>Пользователей онлайн</h3>
-    <p id="active-users" class="big">0</p>
+    <p id="active-users" class="big">1</p>
     <p class="muted">Реальное время (демо)</p>
   </div>
   <div class="stat-card">
@@ -100,15 +100,6 @@ toggleBtn.addEventListener("click",()=>{
   localStorage.setItem('theme',newTheme);
   updateToggleIcon();
 });
-
-// demo online users
-let count = Math.floor(Math.random()*10);
-const el = document.getElementById('active-users'); el.textContent = count;
-setInterval(()=>{
-  const delta = Math.random()>0.5?1:-1;
-  count = Math.max(0,count + delta*Math.round(Math.random()*2));
-  el.textContent = count;
-},5000);
 
 // Защита от копирования
 document.addEventListener('contextmenu', function(e) {
