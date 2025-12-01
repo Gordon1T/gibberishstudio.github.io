@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /server/
+Disallow: /config/
+Allow: /
+
+Sitemap: https://gordon1t.github.io/gibberishstudio.github.io/sitemap.xml
