@@ -88,9 +88,6 @@ a:hover { opacity:0.8; }
 .footer-links { display:flex; gap:20px; }
 .footer-links a { color:var(--text); }
 
-/* ================= АНАЛИТИКА ================= */
-.analytics-pinned { position:fixed; bottom:15px; right:15px; background:var(--card-bg); padding:12px 15px; border-radius:10px; font-size:0.85rem; box-shadow:0 4px 14px var(--shadow); opacity:0.8; user-select:none; }
-
 /*форма*/
 .contact-form {
   background: var(--card-bg);
